@@ -1,0 +1,42 @@
+.section-cards {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: $step * 4 $step * 2;
+    font-family: PT Serif, Georgia, serif;
+    color: $text-color;
+    background-color: $bg-color-dark;
+    &__pages {
+        background-color: $bg-color-dark;
+    }
+}
+
+.page-loader {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: $step * 4 $step * 2;
+    align-items: center;
+
+    &__text {
+        padding-bottom: $step * 3;
+        color: $color-btn;
+        font-size: 18px;
+        line-height: 2;
+        font-weight: 600;
+    }
+}
+
+.like{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.icon{
+    width: 22px;
+    height: 22px;
+}

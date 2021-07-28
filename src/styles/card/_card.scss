@@ -1,0 +1,45 @@
+.card {
+    font-family: PT Serif, Georgia, serif;
+    color: $text-color;
+    
+        &__photo {
+            width: auto;
+            height: 320px;
+        }
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+
+        [data-tooltip]::after {
+            content: attr(data-tooltip); /* Выводим текст */
+            position: absolute; /* Абсолютное позиционирование */
+            width: 300px; /* Ширина подсказки */
+            left: 0;
+            top: 0; /* Положение подсказки */
+            background: #3989c9; /* Синий цвет фона */
+            color: #fff; /* Цвет текста */
+            padding: 0.5em; /* Поля вокруг текста */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+            pointer-events: none; /* Подсказка */
+            opacity: 0; /* Подсказка невидима */
+            transition: 1s; /* Время появления подсказки */
+        }
+    }
+    &__text {
+        font-size: $font-size-medium;
+    }
+    &__link {
+        text-align: right;
+        font-weight: 600;
+        color: $text-color;
+        text-decoration: none;
+    }
+    &__link:hover {
+        color: $color-active-link;
+        text-decoration: none;
+    }
+}

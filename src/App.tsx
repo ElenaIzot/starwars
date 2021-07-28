@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/main.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { FavoritesPage } from './pages/Favorite';
+import { CharacterList } from './components/CharacterList';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { MainPage } from './pages/MainPage';
+import { useState } from 'react';
 
 function App() {
+
+
+//   const onSearchChange = (value: string) => {
+//       value.toLowerCase();
+//       setFilterName(value);
+// console.log(value)
+//   }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        {/* <Header onSearchChange={onSearchChange} /> */}
+        <Header />
+        <Switch>
+          <Route exact path='/' component={MainPage} />
+          <Route exact path="/people/?page=:id" children={CharacterList} />
+          <Route path='/favorite' component={FavoritesPage} />
+        </Switch>
+        <Footer />
+      </Router>
+    </>
   );
 }
 

@@ -1,0 +1,140 @@
+.recipe {
+    text-align: justify;
+    border: solid 1px $border-color;
+    font-weight: 400;
+    color: $text-color;
+    font-family: PT Serif, Georgia, serif;
+    background-color: $bg-color;
+
+    &__wrap {
+        width: auto;
+        padding-left: $step * 5;
+        padding-right: $step * 3;
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 800;
+        color: $text-color;
+        padding-top: $step * 2;
+        padding-bottom: $step * 2;
+        text-align: center;
+    }
+    &__photo {
+        width: 600px;
+        height: 600px;
+    }
+    &__link {
+        text-align: right;
+        font-weight: 600;
+        color: $text-color;
+        text-decoration: none;
+    }
+    &__link:hover {
+        color: $color-active-link;
+        text-decoration: none;
+    }
+}
+
+.ingredient {
+    background-color: $bg-color;
+    padding: $step * 2;
+    text-align: justify;
+
+    &__subtitle_flex {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    &__subtitle {
+        padding: $step 0;
+        font-weight: 600;
+        font-size: $font-size-medium;
+        text-align: left;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px dotted $color-active-btn;
+    }
+
+    &__calories-message {
+        font-size: $font-size-default;
+        font-style: italic;
+    }
+
+    &__text {
+        font-size: $font-size-medium;
+        margin: 0;
+
+        &_name {
+            flex-basis: 65%;
+            text-align: left;
+            margin: 0;
+        }
+
+        &_count {
+            flex-basis: 10%;
+            text-align: right;
+            margin: 0;
+        }
+
+        &_measure {
+            flex-basis: 15%;
+            text-align: left;
+            padding-left: $step;
+            margin: 0;
+        }
+
+        &_calories {
+            flex-basis: 10%;
+            text-align: right;
+            margin: 0;
+        }
+
+        &_message {
+            font-style: italic;
+        }
+    }
+}
+
+.instruction {
+    background-color: $bg-color;
+    padding: $step * 2;
+
+    &__subtitle_flex {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    &__subtitle {
+        padding: $step 0;
+        font-weight: 600;
+        font-size: $font-size-medium;
+        text-align: left;
+        margin: 0;
+        line-height: normal;
+    }
+
+    &__time {
+        padding: $step 0;
+        font-weight: 400;
+        font-size: $font-size-medium;
+        line-height: 1;
+        font-style: italic;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        padding-left: $step * 2;
+    }
+
+    &__text {
+        font-size: $font-size-medium;
+    }
+}

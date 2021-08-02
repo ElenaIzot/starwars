@@ -7,10 +7,11 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { MainPage } from './pages/MainPage';
 import { useState } from 'react';
+// import { MeRequest } from './components/ap';
+
+// let reg = MeRequest();
 
 function App() {
-
-
 //   const onSearchChange = (value: string) => {
 //       value.toLowerCase();
 //       setFilterName(value);

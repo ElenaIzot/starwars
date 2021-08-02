@@ -1,14 +1,14 @@
 import logo from '../img/logo.svg.png'
 import { Form, Nav, Navbar } from "react-bootstrap";
-import { Link , useHistory} from 'react-router-dom';
+import { Link , useHistory, useLocation} from 'react-router-dom';
 import { useState } from 'react';
 import { useQuery } from "../router/hooks";
 
 export function Header(): JSX.Element {
-    let query = useQuery();
-    let [searchValue, setSearchValue] = useState(query.get('search') || '');
-    let history = useHistory();
-
+    const query = useQuery();
+    const [searchValue, setSearchValue] = useState(query.get('search') || '');
+    const history = useHistory();
+      
     const handleSubmit = (e: any) => {
         e.preventDefault();
         history.push(`/?search=${searchValue}`)

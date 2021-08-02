@@ -9,7 +9,8 @@ export function CharacterItem (props: { character: Character }): JSX.Element {
     const valueFromStorage = localStorage.getItem(props.character.url);
     let [isFavorites, setFavorites] = useState(
         !!valueFromStorage
-    );
+    ); 
+    // console.log(props.character.id)
 
     function addInFavorite() {
         setFavorites(true)
@@ -37,9 +38,16 @@ export function CharacterItem (props: { character: Character }): JSX.Element {
         </div>
     }
 
+
+    // let srcImg = getImgPeople(props.character.id);
+
     return (
         <Card className='card text-white bg-dark mb-3' style={{ width: '18rem' }}>
-            <Card.Img variant="top" className="card__photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsaJAcJ22qolg9QTSVV994P2JGQESCb8_Gqg&usqp=CAU" />
+            <Card.Img 
+                variant="top" 
+                className="card__photo" 
+                src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsaJAcJ22qolg9QTSVV994P2JGQESCb8_Gqg&usqp=CAU}"} 
+            />
             <Card.Body>
                 <Card.Title>{props.character.name}</Card.Title>
                 <Card.Text>

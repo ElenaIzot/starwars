@@ -25,7 +25,10 @@ export function getResourcesURL(resourcesName: string, id?: number): string {
 }
 
 export function getPeoplePage(page: number, searchName: string): Promise<Page<Character>> {
-    const url = `${getResourcesURL('people')}?page=${page}&name=${searchName}`;
+    const url = `${getResourcesURL('people')}?page=${page}&search=${searchName}`;
+    // /people/?name=?search=skywalker
+    // 'https://swapi.dev/api/people/?page=&name=search=skywalker
+    // const url = `${getResourcesURL('people')}?page=${page}2&name=%3Fsearch%3D${searchName}`;
 
     return fetch(url).then(
         (response) => {
@@ -40,3 +43,31 @@ export function getPeople(id: number): Promise<any> {
             return response.json();
         })
 }
+
+// export function MeRequest() {
+//     const url = 'https://swapi.dev/api/planets/';
+//     return fetch(url, {
+//         method: 'DELETE',
+//         headers: {
+//             'Content-Type': '2',
+//         },
+//     }).then((response) => {
+//         return response.json();
+//     }).then(json => {
+//         console.log(json)
+//     })
+// }
+
+// export function getImgPeople(id: number): Promise<any> {
+//     const url = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
+//     return fetch(url)
+//         .then((response) => {
+//             // console.log(response)
+//             return response.json();
+//     }).then(json => {
+//         return console.log(json)
+//     })
+// }
+
+//get img
+//https://starwars-visualguide.com/assets/img/characters/{characterId}.jpg

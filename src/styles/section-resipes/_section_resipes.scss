@@ -1,5 +1,6 @@
 .section-cards {
-    height: auto;
+    min-height: 85vh;
+    max-height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

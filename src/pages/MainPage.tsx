@@ -1,18 +1,29 @@
 import { useEffect, useState } from 'react';
 import { Character, getPeoplePage, Page } from '../components/ap'
 import { CharacterList } from '../components/CharacterList';
-import { Button, Container, Form } from "react-bootstrap";
+import { CharacterItem } from '../components/CharacterItem';
+import { Button, Card, Container, Form, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useQuery } from "../router/hooks";
+import { useHistory, useLocation} from 'react-router-dom';
 
 export function MainPage(): JSX.Element {
     let query = useQuery();
     const [peoplePage, setPeoplePage] = useState<Page<Character> | null>(null);
     const [pageNumber, setPage] = useState(1);
-    const searchParam = query.get('search') || '';
+    const [searchParam, setSearchParam] = useState(query.get('search')!);
+    const querySearch = query.get('search') || '';
 
+    if(querySearch !== searchParam){
+        console.log("query has change", searchParam, querySearch)
+        setSearchParam(querySearch);
+        getPeoplePage(pageNumber, querySearch).then(page =>{
+            setPeoplePage(page)
+        })
+    }
+    
     useEffect(() => {
         getPeoplePage(pageNumber, searchParam).then(page => {
-            setPeoplePage(page);
+            setPeoplePage(page)
         })
     }, []);
 
@@ -31,12 +42,7 @@ export function MainPage(): JSX.Element {
     }
 
     if (!peoplePage) {
-        getPeoplePage(pageNumber, searchParam).then(
-            page => {
-                setPeoplePage(page);
-            });
-
-        return (
+            return (
             <div>Loading...</div>
         );
     }

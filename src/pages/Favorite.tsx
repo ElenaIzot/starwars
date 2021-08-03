@@ -1,11 +1,27 @@
-import { useEffect } from "react";
+import { Container } from "react-bootstrap";
+import { Character } from "../components/ap";
+import { CharacterList } from "../components/CharacterList";
 
-export function FavoritesPage(character: any): JSX.Element {   
-       useEffect(() => {
-        localStorage.getItem(character.url);
-    }, [character.url])
+export function FavoritesPage(): JSX.Element {
+    const keys = Object.keys(localStorage);
+    const characters: Character[] = [];
 
-       return (
-        <div>null</div>
-    )
+    for (const key of keys) {
+        if (key.indexOf('favorite:') !== 0) {
+            continue
+        }
+
+        const character: Character = JSON.parse(
+            localStorage.getItem(key)!
+        );
+
+        characters.push(character);
+    };
+
+
+    return (
+        <Container className='section-cards'>
+            <CharacterList characters={characters} />
+        </Container >
+    );
 }

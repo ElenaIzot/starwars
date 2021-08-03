@@ -8,10 +8,7 @@ export function CharacterList(props: { characters: Character[] }) {
     ))
   
     return (
-        <>
-            <div className='section-cards'>{peopleList}</div>
-        </>
-
+          <div className='card__lists'>{peopleList}</div>
     )
 }
 

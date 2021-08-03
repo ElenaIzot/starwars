@@ -1,6 +1,6 @@
 import logo from '../img/logo.svg.png'
 import { Form, Nav, Navbar } from "react-bootstrap";
-import { Link , useHistory, useLocation} from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { useQuery } from "../router/hooks";
 
@@ -8,13 +8,13 @@ export function Header(): JSX.Element {
     const query = useQuery();
     const [searchValue, setSearchValue] = useState(query.get('search') || '');
     const history = useHistory();
-      
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
         history.push(`/?search=${searchValue}`)
     };
 
-    const handleChange = (e: any) =>{
+    const handleChange = (e: any) => {
         setSearchValue(e.target.value)
         console.log(e.target.value)
     }
@@ -30,21 +30,21 @@ export function Header(): JSX.Element {
                         className="menu mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                            <Link to='/' className="menu__link">Главная</Link>
-                            <Link to='/favorite' className="menu__link">
-                                Избранное
-                            </Link>
+                        <Link to='/' className="menu__link">Main</Link>
+                        <Link to='/favorite' className="menu__link">
+                            Favorites
+                        </Link>
                     </Nav>
                     <Form className="form d-flex" onSubmit={handleSubmit}>
-                        <input 
+                        <input
                             className="mr-2 form__search"
-                            type="text" 
-                            placeholder='Поиск'
+                            type="text"
+                            placeholder='Search'
                             value={searchValue}
                             onChange={handleChange}
                         />
-                        <input 
-                            type="submit" 
+                        <input
+                            type="submit"
                             className="form__btn btn btn-outline-warning "
                             value='Search'
                         />

@@ -1,8 +1,8 @@
 export const BASE_API_URL = 'https://swapi.dev/api';
 export interface Page<T> {
     count: number,
-    next: string,
-    previous: string,
+    next: string | null,
+    previous: string | null,
     results: T[]
 }
 export interface Character {
@@ -39,11 +39,10 @@ export function getPeoplePage(page: number, searchName: string)
                     // isFavorite: false,
                 };
             });
-            // Extend server response and add image to each character
-            // page.results = page.results.map(extendPeopleResponse);
-            // return page;
+
             return page;
-        })
+        }
+    )
 }
 
 // export function getPeople(id: number): Promise<any> {

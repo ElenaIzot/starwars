@@ -1,40 +1,50 @@
 import heartYellow from "../img/heartYellow.png";
 import heartGrey from "../img/heartGrey.png";
 import { useState } from "react";
-import { FavoritesPage } from "../pages/Favorite";
 import { Character } from "./ap";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 export function CharacterItem(props: { character: Character }): JSX.Element {
-    const valueFromStorage = localStorage.getItem(props.character.url);
-    let [isFavorites, setFavorites] = useState(
+    const valueFromStorage = localStorage.getItem(
+        getFavoriteKey(props.character) //передаем Объект персонажа
+    );
+
+    let [isFavorite, setFavorites] = useState(
         !!valueFromStorage
     );
 
+    function getFavoriteKey(character: Character): string { //создаем ключ с  `favorite: id;
+        return `favorite:${character.id}`;
+    };
+
     function addInFavorite() {
         setFavorites(true)
-        localStorage.setItem(props.character.url, props.character.name);
-        <FavoritesPage hero={props.character}></FavoritesPage>
-    }
+        localStorage.setItem(//добавляем в хранилище ключ  `favorite: id;
+            getFavoriteKey(props.character),
+            JSON.stringify(props.character)//преобразуем объект в строку формат jSON
+        );
+    };
 
     function removeFromFavorite() {
         setFavorites(false)
-        localStorage.removeItem(props.character.url);
-    }
+        localStorage.removeItem(
+            getFavoriteKey(props.character) //удаляем объект по ключу
+        );
+    };
 
     let btnRemove;
     let btnAdd;
 
-    if (isFavorites) {
+    if (isFavorite) {
         btnRemove = <div className='card__group_favorite'
             onClick={() => removeFromFavorite()}>
-            Удалить из избранного
+            Remove from favorites
             <img className='icon' src={heartYellow} alt={'like'} />
         </div>
     } else {
         btnAdd = <div className='card__group_favorite'
             onClick={() => addInFavorite()}>
-            Добавить в избранное
+            Add to favourites
             <img className='icon' src={heartGrey} alt={'like'} />
         </div>
     }

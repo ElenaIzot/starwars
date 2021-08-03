@@ -1,4 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
 import { Character } from "./ap";
 import { CharacterItem } from "./CharacterItem";
 

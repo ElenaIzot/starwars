@@ -1,18 +1,17 @@
 .card {
     font-family: PT Serif, Georgia, serif;
     color: $text-color;
-    
-        &__photo {
-            width: auto;
-            height: 320px;
-        }
+    &__photo {
+        width: auto;
+        height: 364px;
+        padding: $step;
+    }
     &__title {
         font-size: 18px;
         font-weight: 600;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-
 
         [data-tooltip]::after {
             content: attr(data-tooltip); /* Выводим текст */
@@ -41,5 +40,12 @@
     &__link:hover {
         color: $color-active-link;
         text-decoration: none;
+    }
+
+    &__group_favorite {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
     }
 }

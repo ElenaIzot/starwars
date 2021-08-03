@@ -35,17 +35,17 @@ export function Header(): JSX.Element {
                                 Избранное
                             </Link>
                     </Nav>
-                    <Form className="d-flex" onSubmit={handleSubmit}>
+                    <Form className="form d-flex" onSubmit={handleSubmit}>
                         <input 
-                            className="mr-2"
+                            className="mr-2 form__search"
                             type="text" 
-                            placeholder='search'
+                            placeholder='Поиск'
                             value={searchValue}
                             onChange={handleChange}
                         />
                         <input 
                             type="submit" 
-                            className="btn btn-outline-warning"
+                            className="form__btn btn btn-outline-warning "
                             value='Search'
                         />
                     </Form>

@@ -6,22 +6,12 @@ import { CharacterList } from './components/CharacterList';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { MainPage } from './pages/MainPage';
-import { useState } from 'react';
-// import { MeRequest } from './components/ap';
-
-// let reg = MeRequest();
 
 function App() {
-//   const onSearchChange = (value: string) => {
-//       value.toLowerCase();
-//       setFilterName(value);
-// console.log(value)
-//   }
 
   return (
     <>
       <Router>
-        {/* <Header onSearchChange={onSearchChange} /> */}
         <Header />
         <Switch>
           <Route exact path='/' component={MainPage} />

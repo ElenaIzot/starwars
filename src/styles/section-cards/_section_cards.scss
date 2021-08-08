@@ -1,35 +1,31 @@
 .section-cards {
-    min-height: 85vh;
+    min-height: 90vh;
     max-height: auto;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: $step * 2 $step * 2;
     font-family: PT Serif, Georgia, serif;
     color: $text-color;
     background-color: $bg-color-dark;
-    
     &__pages {
         background-color: $bg-color-dark;
     }
 }
 
 .page-loader {
-    height: auto;
+    min-height: 85vh;
+    max-height: auto;
     display: flex;
     flex-direction: column;
     padding: $step * 4 $step * 2;
+    color: $text-color-main;
+    justify-content: center;
     align-items: center;
-
-    &__text {
-        padding-bottom: $step * 3;
-        color: $color-btn;
-        font-size: 18px;
-        line-height: 2;
-        font-weight: 600;
-    }
+    font-family: PT Serif, Georgia, serif;
+    font-size: $font-size-medium;
 }
 
 .like {
@@ -48,5 +44,14 @@
     padding-left: 0;
     list-style: none;
     justify-content: center;
-    margin: auto;
+    margin: 32px auto;
+}
+
+.button {
+    width: 88px;
+    height: 37px;
+    padding: $step;
+    &_currentPage{
+        width: 42px;
+    }
 }

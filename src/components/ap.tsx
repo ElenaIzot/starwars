@@ -60,5 +60,5 @@ export function getImgPeople(id: number): Promise<any> {
             return response.json();
         }).then(json => {
             return console.log(json)
-        })
+        }).catch(error => console.error(error));
 }

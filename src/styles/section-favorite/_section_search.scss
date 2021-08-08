@@ -1,0 +1,16 @@
+.section-search {
+    min-height: 85vh;
+    max-height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $step * 2 $step * 2;
+    font-family: PT Serif, Georgia, serif;
+    color: $text-color;
+    background-color: $bg-color-dark;
+    &__pages {
+        background-color: $bg-color-dark;
+    }
+}

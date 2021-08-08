@@ -11,21 +11,17 @@
 .menu {
     display: flex;
     justify-content: space-between;
-
     &__link{
-        padding-left: $step; 
+        margin: 0 $step*4;
         text-align: center;
         line-height: 2;
         color: $text-color;
         text-decoration: none; 
-        
        }
        &__link:hover {
         color: $color-active-link; 
         text-decoration: none;
     }
-
-   
 }
 
 .form {
@@ -34,6 +30,7 @@
     padding-right: $step*12.5;
 
     &__search{
+        width: 198px;
         margin-right: $step;
         padding-left: $step;
     }
@@ -43,7 +40,7 @@
 }
 
 .logo{
-    padding-left: $step*2;
-    width: 90px;
+    margin-left: $step*13;
+    width: 80px;
     height: 36px;
 }

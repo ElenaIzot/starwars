@@ -1,6 +1,6 @@
 import logo from '../img/logo.svg.png'
 import { Form, Nav, Navbar } from "react-bootstrap";
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useQuery } from "../router/hooks";
 
@@ -27,12 +27,12 @@ export function Header(): JSX.Element {
                 </Navbar.Brand>
                 <Navbar.Collapse className="menu">
                     <Nav
-                        className="menu mr-auto my-2 my-lg-0"
+                        className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
                         <Link to='/' className="menu__link">Main</Link>
                         <Link to='/favorite' className="menu__link">
-                            Favorites
+                            Favorite
                         </Link>
                     </Nav>
                     <Form className="form d-flex" onSubmit={handleSubmit}>

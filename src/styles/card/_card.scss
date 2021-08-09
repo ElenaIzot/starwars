@@ -1,21 +1,18 @@
-.card {
+.card-lists{
     display: flex;
-    margin: 14px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.card {
+    padding: $step;
     font-family: PT Serif, Georgia, serif;
     color: $text-color;
-    &__lists {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-         align-items: center;
-        // justify-content: flex-start;
-        // margin: 16px 16px;
-    }
+    width: 16rem;
     &__photo {
         width: auto;
-        height: 364px;
-        padding: $step;
+        height: 100%;
     }
     &__title {
         font-size: 18px;
@@ -59,4 +56,66 @@
         align-items: center;
         cursor: pointer;
     }
+}
+
+.like {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+}
+
+.pagination{
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    justify-content: center;
+    margin: 32px auto;
+}
+
+.button {
+    width: 88px;
+    height: 37px;
+    padding: $step;
+    &_currentPage{
+        width: 42px;
+    }
+}
+
+/* 2 колонки на x-sm */
+@media (min-width: 0px) {
+    .card {
+        margin-bottom: $step*2;
+        width: 14rem;
+    }
+   
+}
+
+/* 2 колонки на sm */
+@media (min-width: 576px) {
+    .card {
+        margin-bottom: $step*4;
+        width: 14rem;
+    }
+   
+}
+/* 3 колонки на md */
+@media (min-width: 768px) {
+    .card {
+        margin-bottom: $step*6;
+        width: 16rem;
+    }
+    
+}
+/* 4 колонки на lg и xl */
+@media (min-width: 992px) {
+    .card {
+        margin-bottom: $step*6;
+        width: 18rem;
+    }
+    
 }

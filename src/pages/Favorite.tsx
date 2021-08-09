@@ -20,7 +20,7 @@ export function FavoritePage(): JSX.Element {
 
 
     return (
-        <Container className='section-cards'>
+        <Container className='section-content container-xxl'>
             <CharacterList characters={characters} />
         </Container >
     );

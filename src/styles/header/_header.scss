@@ -10,16 +10,18 @@
 
 .menu {
     display: flex;
+    flex-basis: auto;
     justify-content: space-between;
-    &__link{
-        margin: 0 $step*4;
+    &__link {
+        display: block;
+        margin: 0 $step * 4;
         text-align: center;
         line-height: 2;
         color: $text-color;
-        text-decoration: none; 
-       }
-       &__link:hover {
-        color: $color-active-link; 
+        text-decoration: none;
+    }
+    &__link:hover {
+        color: $color-active-link;
         text-decoration: none;
     }
 }
@@ -27,20 +29,21 @@
 .form {
     display: flex;
     justify-content: space-between;
-    padding-right: $step*12.5;
+    padding-right: $step * 12.5;
 
-    &__search{
+    &__search {
+        display: block;
         width: 198px;
         margin-right: $step;
         padding-left: $step;
     }
-    // &__btn{
-       
-    // }
+    &__btn {
+        display: block;
+    }
 }
 
-.logo{
-    margin-left: $step*13;
+.logo {
+    margin-left: $step * 13;
     width: 80px;
     height: 36px;
 }

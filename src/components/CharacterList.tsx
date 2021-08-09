@@ -8,7 +8,7 @@ export function CharacterList(props: { characters: Character[] }) {
     ))
   
     return (
-          <div className='card__lists'>{peopleList}</div>
+          <div className='card-lists'>{peopleList}</div>
     )
 }
 

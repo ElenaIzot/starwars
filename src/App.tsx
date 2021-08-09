@@ -6,6 +6,7 @@ import { CharacterList } from './components/CharacterList';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { MainPage } from './pages/MainPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
 
@@ -13,12 +14,14 @@ function App() {
     <>
       <Router>
         <Header />
-          <Switch>
+        <Switch>
           <Route exact path='/' component={MainPage} />
-          {/* <Route exact path="/?page=:id" children={CharacterList} /> */}
-           <Route exact path="/people/?page=:id" children={CharacterList} />
+          <Route exact path="/people/?page=:id" children={CharacterList} />
           <Route exact path='/favorite' component={FavoritePage} />
-          <Redirect from='/' to='/page=:1'/>
+          {/* <Route exact path="/notfound" component={NotFoundPage}/> */}
+          <Route path="" component={NotFoundPage} />
+          {/* <Route to="" component={NotFoundPage}/> */}
+          {/* <Redirect from='/?search=:*' to='/notfound'/> */}
         </Switch>
         <Footer />
       </Router>

@@ -50,7 +50,7 @@ export function CharacterItem(props: { character: Character }): JSX.Element {
     }
 
     return (
-        <Card className='card text-white bg-dark' style={{ width: '18rem' }}>
+        <Card className='card text-white bg-dark'>
             <Card.Img
                 variant="top"
                 className="card__photo"
@@ -58,9 +58,9 @@ export function CharacterItem(props: { character: Character }): JSX.Element {
             />
             <Card.Body>
                 <Card.Title>{props.character.name}</Card.Title>
-                <Card.Text>
+                {/* <Card.Text>
                     Homeworld: {props.character.homeworld}
-                </Card.Text>
+                </Card.Text> */}
             </Card.Body>
             <ListGroup className="list-group-flush">
                 <ListGroupItem className="like text-white bg-dark mb-3">
@@ -69,5 +69,6 @@ export function CharacterItem(props: { character: Character }): JSX.Element {
                 </ListGroupItem>
             </ListGroup>
         </Card>
+  
     )
 };

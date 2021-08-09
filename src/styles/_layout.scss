@@ -1,17 +1,13 @@
 @import "./variables";
 
 #root {
+    max-width: 100%;
     background-color: $bg-color-dark;
 }
 
-// .header{
-//     margin-bottom: 32px;
-// }
-
-.section-content{margin-bottom: 72px;}
-
-.card{
-    margin-bottom: $step*4;
+.header{
+    max-width: 100%;
+    margin-bottom: 32px;
 }
 
 .footer{

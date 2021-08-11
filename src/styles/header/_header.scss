@@ -15,7 +15,7 @@
     &__link {
         display: block;
         margin: 0 $step * 4;
-        text-align: center;
+        text-align: left;
         line-height: 2;
         color: $text-color;
         text-decoration: none;
@@ -26,11 +26,19 @@
     }
 }
 
+.menu_dropdown{
+    display: grid;
+    justify-content: start;
+    justify-items: start;
+    margin-left: 76px;
+    
+}
+
 .form {
     display: flex;
     justify-content: space-between;
     padding-right: $step * 12.5;
-
+    margin-left: 32px;
     &__search {
         display: block;
         width: 198px;

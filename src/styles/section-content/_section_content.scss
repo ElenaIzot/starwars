@@ -1,44 +1,40 @@
 .section-content{
-    min-height: 90vh;
-    max-height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: $step * 2 $step * 2;
     font-family: PT Serif, Georgia, serif;
     color: $text-color;
     background-color: $bg-color-dark;
-    // &__title{
-    //     font-size: 48px;
-    //     font-weight: 800;
-    //     color: $text-color;
-    //     padding-top: $step*8;
-    //     text-align: center;
-    //     font-family: PT Serif, Georgia, serif;
-    // }
-    // &__text{
-    //     font-size: 18px;
-    //     font-weight: 300;
-    //     padding: $step*4 $step*8;
-    //     text-align: center;
-    //     line-height: 2;
-    // }
-    // &__author{
-    //     font-size: 18px;
-    //     font-weight: 600;
-    //     padding: $step*2 $step*2;
-    //     text-align: right;
-       
-    // }
+    line-height: 2;
+    &__title{
+        font-size: 48px;
+        font-weight: 600;
+        color: $text-color;
+        padding: $step;
+    }
+    &__text{
+        font-size: 18px;
+        font-weight: 300;
+        padding: $step;
+        margin: 0;
+        &_unknown{
+            padding-left: $step;
+            color: $text-color-warm
+        }
+    }
+    &__link {
+        display: block;
+        color: $text-color;
+        text-decoration: none;
+    }
+    &__link:hover {
+        color: $color-active-link;
+        text-decoration: none;
+    }
 }
 
 .page-loader {
     display: flex;
     flex-direction: column;
     padding: $step * 4 $step * 2;
-    color: $text-color-main;
+    color: $text-color;
     justify-content: center;
     align-items: center;
     font-family: PT Serif, Georgia, serif;

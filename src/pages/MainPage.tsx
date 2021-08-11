@@ -4,7 +4,7 @@ import { CharacterList } from '../components/CharacterList';
 import { Button, Container } from "react-bootstrap";
 import { useQuery } from "../router/hooks";
 import { useHistory } from "react-router-dom";
-import NotFoundPage from './NotFoundPage';
+
 
 export function MainPage(): JSX.Element {
     let query = useQuery();
@@ -29,7 +29,9 @@ export function MainPage(): JSX.Element {
         setPage(1);
         getPeoplePage(pageNumber, querySearch).then(page => {
             setPeoplePage(page);
-        })
+        }).catch(err => {
+            history.push('/notfound')
+        });
     }
 
     function loadPage(pageNumber: number): void {
@@ -38,7 +40,9 @@ export function MainPage(): JSX.Element {
         getPeoplePage(pageNumber, searchParam).then(page => {
             setPeoplePage(page);
             setIsLoading(false);
-        })
+        }).catch(err => {
+            history.push('/notfound')
+        });
     }
 
     function navigateTo(pageNumber: number): void {
@@ -50,7 +54,7 @@ export function MainPage(): JSX.Element {
         loadPage(pageNumber);
     }, []);
 
-   
+
     if (isLoading === true) {
         return (
             <div className='container-xxl page-loader section-content'>Loading...</div>

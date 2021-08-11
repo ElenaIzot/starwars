@@ -10,6 +10,18 @@
     margin-bottom: 32px;
 }
 
+
+.section-content{
+    min-height: 90vh;
+    max-height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $step * 2 $step * 2;
+}
+
 .footer{
     flex-shrink: 0;
     min-height: 40vh;

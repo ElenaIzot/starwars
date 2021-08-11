@@ -48,11 +48,7 @@ export function getPeoplePage(page: number, searchName: string)
             };
         });
         return page;
-    }).catch(error => {
-        console.log('error', error);
-        alert('Oшибка! Страница не найдена.')
-        
-    });
+    })
 }
 
 export function getImgPeople(id: number): Promise<any> {

@@ -16,12 +16,12 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/' component={MainPage} />
-          <Route exact path="/people/?page=:id" children={CharacterList} />
+          <Route exact path="/people" children={CharacterList} />
           <Route exact path='/favorite' component={FavoritePage} />
-          {/* <Route exact path="/notfound" component={NotFoundPage}/> */}
           <Route path="" component={NotFoundPage} />
-          {/* <Route to="" component={NotFoundPage}/> */}
-          {/* <Redirect from='/?search=:*' to='/notfound'/> */}
+          <Route path="*"><NotFoundPage /> </Route>
+          <Route path="/notfound" component={NotFoundPage} />
+          <Redirect from='/?search' to='/notfound' />
         </Switch>
         <Footer />
       </Router>

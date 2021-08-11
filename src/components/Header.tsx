@@ -8,6 +8,9 @@ export function Header(): JSX.Element {
     const query = useQuery();
     const [searchValue, setSearchValue] = useState(query.get('search') || '');
     const history = useHistory();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
@@ -19,19 +22,20 @@ export function Header(): JSX.Element {
         console.log(e.target.value)
     }
 
+
     return (
         <>
             <Navbar bg="dark" variant="dark" expand="lg" className="header container-xxl">
                 <Navbar.Brand href="#">
                     <img className="logo" src={logo} alt={'logo'} />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll"  className="menu" >
+                <Navbar.Toggle aria-controls="navbarScroll" onClick={toggle} />
+                <Navbar.Collapse id="navbarScroll" 
+                        className={isOpen ? 'menu_dropdown' : 'menu'}>
                     <Nav
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
-                        navbarScroll
-                    >
+                        navbarScroll>
                         <Link to='/' className="menu__link">
                             Home
                         </Link>
@@ -40,13 +44,12 @@ export function Header(): JSX.Element {
                         </Link>
                     </Nav>
                     <Form className="d-flex form" onSubmit={handleSubmit}>
-                          <input
+                        <input
                             className="form__search mr-2 "
                             type="text"
                             placeholder='Search'
                             value={searchValue}
-                            onChange={handleChange}
-                        />
+                            onChange={handleChange} />
                         <input
                             type="submit"
                             className="form__btn btn btn-outline-warning "
@@ -55,9 +58,11 @@ export function Header(): JSX.Element {
                     </Form>
                 </Navbar.Collapse>
             </Navbar>
+        </>
+    )
+};
 
-
-            {/* <Navbar className="header container-xxl" bg="dark" variant="dark">
+{/* <Navbar className="header container-xxl" bg="dark" variant="dark">
                 <Navbar.Brand href="#">
                     <img className="logo" src={logo} alt={'logo'} />
                 </Navbar.Brand>
@@ -87,6 +92,3 @@ export function Header(): JSX.Element {
                     </Form>
                 </Navbar.Collapse>
             </Navbar>*/}
-        </>
-    )
-};

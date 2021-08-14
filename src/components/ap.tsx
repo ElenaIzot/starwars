@@ -1,5 +1,3 @@
-import NotFoundPage from "../pages/NotFoundPage";
-
 export const BASE_API_URL = 'https://swapi.dev/api';
 export interface Page<T> {
     count: number,
@@ -33,9 +31,15 @@ export function getPeoplePage(page: number, searchName: string)
             throw new Error("Not found");
         }
         return response;
-    }).then(
-        response => { return response.json() }
-    ).then((page: any) => {
+    }).then(response => {
+        return response.json()
+    }).then(page => {
+        if (page.count === 0) {
+            throw new Error("Not found");
+        }
+        return page;
+    }).then((page: any) => {
+        console.log("page", page);
         page.results = page.results.map((character: any) => {
             const id = character.url.replace(`${BASE_API_URL}/people/`, '')
                 .replace('/', '');
@@ -44,7 +48,6 @@ export function getPeoplePage(page: number, searchName: string)
                 ...character,
                 id: id,
                 imageUrl: imageUrl,
-                // isFavorite: false,
             };
         });
         return page;

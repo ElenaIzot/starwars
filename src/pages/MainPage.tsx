@@ -15,7 +15,7 @@ export function MainPage(): JSX.Element {
         results: [],
     });
 
-    const [pageNumber, setPage] = useState(
+    const [pageNumber, setPageNumber] = useState(
         parseInt(query.get('page') || '1')
     );
 
@@ -26,17 +26,17 @@ export function MainPage(): JSX.Element {
 
     if (querySearch !== searchParam) {
         setSearchParam(querySearch);
-        setPage(1);
+        setPageNumber(1);
         getPeoplePage(pageNumber, querySearch).then(page => {
             setPeoplePage(page);
         }).catch(err => {
             history.push('/notfound')
-        });
+        })
     }
 
     function loadPage(pageNumber: number): void {
         setIsLoading(true);
-        setPage(pageNumber);
+        setPageNumber(pageNumber);
         getPeoplePage(pageNumber, searchParam).then(page => {
             setPeoplePage(page);
             setIsLoading(false);

@@ -1,6 +1,3 @@
-import { Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
 export function Footer(): JSX.Element {
     return (<footer className="footer container-xxl">
         <div className="footer__item">

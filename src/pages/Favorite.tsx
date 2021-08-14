@@ -18,7 +18,6 @@ export function FavoritePage(): JSX.Element {
         characters.push(character);
     };
 
-
     return (
         <Container className='section-content container-xxl'>
             <CharacterList characters={characters} />

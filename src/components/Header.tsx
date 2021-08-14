@@ -14,12 +14,11 @@ export function Header(): JSX.Element {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        history.push(`/?search=${searchValue}`)
+        history.push(`/starwars/?search=${searchValue}`)
     };
 
     const handleChange = (e: any) => {
         setSearchValue(e.target.value)
-        // console.log(e.target.value)
     }   
 
     return (
@@ -35,7 +34,7 @@ export function Header(): JSX.Element {
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Link to='/' className="menu__link">
+                        <Link to='/starwars' className="menu__link">
                             Home
                         </Link>
                         <Link to='/favorite' className="menu__link">

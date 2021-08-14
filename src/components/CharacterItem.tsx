@@ -50,22 +50,23 @@ export function CharacterItem(props: { character: Character }): JSX.Element {
     }
 
     return (
-        <Card className='card text-white bg-dark'>
-            <Card.Img
-                variant="top"
+        <div className='card text-white bg-dark'>
+            <img
                 className="card__photo"
                 src={`https://starwars-visualguide.com/assets/img/characters/${props.character.id}.jpg`}
             />
-            <Card.Body>
-                <Card.Title>{props.character.name}</Card.Title>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-                <ListGroupItem className="like text-white bg-dark mb-3">
+            <div className='card__body'>
+                <div className='card__title'>
+                    {props.character.name}
+                </div>
+            </div>
+
+            <div className='card__body'>
+                <div className="card__text like text-white bg-dark mb-3 ">
                     {btnRemove}
                     {btnAdd}
-                </ListGroupItem>
-            </ListGroup>
-        </Card>
-
+                </div>
+            </div>
+        </div>
     )
 };

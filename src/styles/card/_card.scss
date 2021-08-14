@@ -1,34 +1,40 @@
 .card-lists {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+    grid-gap: $step * 3;
+    align-self: baseline;
 }
 
 .card {
-    padding: $step;
     font-family: PT Serif, Georgia, serif;
     color: $text-color;
-    width: 16rem;
+    padding: $step;
+    border-radius: 6px;
+    &__body {
+        padding: $step * 2 $step * 2 0px $step * 2;
+        text-align: left;
+    }
     &__photo {
-        width: auto;
-        height: 100%;
+        width: 100%;
+        height: auto;
     }
     &__title {
         font-size: $font-size-medium;
-        font-weight: 600;
+        font-weight: 500;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
     }
     &__text {
-        font-size: $font-size-medium;
+        font-size: $font-size-default;
     }
     &__group_favorite {
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
+        font-size: $font-size-default;
     }
 }
 
@@ -41,6 +47,7 @@
 .icon {
     width: 22px;
     height: 22px;
+    margin-left: $step;
 }
 
 .pagination {
@@ -55,50 +62,8 @@
     width: 88px;
     height: 37px;
     padding: $step;
+    margin: 0 8px;
     &_currentPage {
         width: 42px;
-    }
-}
-
-@media (min-width: 0px) {
-    .card {
-        margin-bottom: $step * 2;
-        width: 14rem;
-        &__group_favorite {
-            font-size: $font-size-small;
-        }
-    }
-}
-
-@media (min-width: 576px) {
-    .card {
-        margin-bottom: $step * 4;
-        width: 14rem;
-        &__title {
-            font-size: $font-size-medium;
-        }
-        &__group_favorite {
-            font-size: $font-size-small;
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .card {
-        margin-bottom: $step * 6;
-        width: 16rem;
-        &__group_favorite {
-            font-size: $font-size-medium;
-        }
-    }
-}
-
-@media (min-width: 992px) {
-    .card {
-        margin-bottom: $step * 6;
-        width: 18rem;
-        &__group_favorite {
-            font-size: $font-size-medium;
-        }
     }
 }

@@ -18,9 +18,19 @@ export function FavoritePage(): JSX.Element {
         characters.push(character);
     };
 
-    return (
-        <Container className='section-content container-xxl'>
-            <CharacterList characters={characters} />
-        </Container >
-    );
+    if (keys.length !== 0) {
+        return (
+            <Container className='section-content container-xxl'>
+                <CharacterList characters={characters} />
+            </Container >
+        );
+    } else {
+        return (
+            <Container className='section-content container-xxl'>
+                <div className='section-content__text'>
+                    You haven't added the characters to your favorites yet.
+                </div>
+            </Container >
+        );
+    }
 }

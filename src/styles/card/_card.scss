@@ -1,9 +1,8 @@
-.card-lists{
+.card-lists {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
 }
 
 .card {
@@ -16,41 +15,15 @@
         height: 100%;
     }
     &__title {
-        font-size: 18px;
+        font-size: $font-size-medium;
         font-weight: 600;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-
-        [data-tooltip]::after {
-            content: attr(data-tooltip); /* Выводим текст */
-            position: absolute; /* Абсолютное позиционирование */
-            width: 300px; /* Ширина подсказки */
-            left: 0;
-            top: 0; /* Положение подсказки */
-            background: #3989c9; /* Синий цвет фона */
-            color: #fff; /* Цвет текста */
-            padding: 0.5em; /* Поля вокруг текста */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
-            pointer-events: none; /* Подсказка */
-            opacity: 0; /* Подсказка невидима */
-            transition: 1s; /* Время появления подсказки */
-        }
     }
     &__text {
         font-size: $font-size-medium;
     }
-    &__link {
-        text-align: right;
-        font-weight: 600;
-        color: $text-color;
-        text-decoration: none;
-    }
-    &__link:hover {
-        color: $color-active-link;
-        text-decoration: none;
-    }
-
     &__group_favorite {
         display: flex;
         justify-content: space-between;
@@ -70,7 +43,7 @@
     height: 22px;
 }
 
-.pagination{
+.pagination {
     display: flex;
     padding-left: 0;
     list-style: none;
@@ -82,41 +55,50 @@
     width: 88px;
     height: 37px;
     padding: $step;
-    &_currentPage{
+    &_currentPage {
         width: 42px;
     }
 }
 
-/* 2 колонки на x-sm */
 @media (min-width: 0px) {
     .card {
-        margin-bottom: $step*2;
+        margin-bottom: $step * 2;
         width: 14rem;
+        &__group_favorite {
+            font-size: $font-size-small;
+        }
     }
-   
 }
 
-/* 2 колонки на sm */
 @media (min-width: 576px) {
     .card {
-        margin-bottom: $step*4;
+        margin-bottom: $step * 4;
         width: 14rem;
+        &__title {
+            font-size: $font-size-medium;
+        }
+        &__group_favorite {
+            font-size: $font-size-small;
+        }
     }
-   
 }
-/* 3 колонки на md */
+
 @media (min-width: 768px) {
     .card {
-        margin-bottom: $step*6;
+        margin-bottom: $step * 6;
         width: 16rem;
+        &__group_favorite {
+            font-size: $font-size-medium;
+        }
     }
-    
 }
-/* 4 колонки на lg и xl */
+
 @media (min-width: 992px) {
     .card {
-        margin-bottom: $step*6;
+        margin-bottom: $step * 6;
         width: 18rem;
+        &__group_favorite {
+            font-size: $font-size-medium;
+        }
     }
-    
 }

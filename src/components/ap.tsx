@@ -39,7 +39,6 @@ export function getPeoplePage(page: number, searchName: string)
         }
         return page;
     }).then((page: any) => {
-        console.log("page", page);
         page.results = page.results.map((character: any) => {
             const id = character.url.replace(`${BASE_API_URL}/people/`, '')
                 .replace('/', '');

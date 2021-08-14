@@ -2,7 +2,7 @@
   "name": "starwars",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://ElenaIzot.github.io/starwars",
+  "homepage" : "http://ElenaIzot.github.io/starwars/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

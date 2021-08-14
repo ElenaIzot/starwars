@@ -1,9 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function NotFoundPage() {
-    let location = useLocation();
+function NotFoundPage(): JSX.Element {
 
     return (
         <Container className='container-xxl section-content notfoundpage'>
@@ -15,7 +14,8 @@ function NotFoundPage() {
             <p className='section-content__text'>
                 Please use the navigation or the search form to find the information you are interested in.
             </p>
-            <Link to="/" className="section-content__link section-content__link_large">
+            <Link to="/"
+                className="section-content__link section-content__link_large">
                 Go Home
             </Link>
         </Container>

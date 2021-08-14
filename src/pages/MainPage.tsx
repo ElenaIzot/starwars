@@ -57,7 +57,9 @@ export function MainPage(): JSX.Element {
 
     if (isLoading === true) {
         return (
-            <div className='container-xxl page-loader section-content'>Loading...</div>
+            <div className='container-xxl page-loader section-content'>
+                Loading...
+            </div>
         )
     } else {
         return (<Container className='section-content container-xxl'>
@@ -69,7 +71,9 @@ export function MainPage(): JSX.Element {
                     onClick={() => navigateTo(pageNumber - 1)} >
                     Previous
                 </Button>
-                <div className="button button_currentPage btn btn-warning">{pageNumber}</div>
+                <div className="button button_currentPage btn btn-warning">
+                    {pageNumber}
+                </div>
                 <Button variant="btn btn-warning"
                     className='button'
                     disabled={peoplePage.next == null}

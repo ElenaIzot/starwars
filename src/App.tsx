@@ -21,7 +21,6 @@ function App() {
           <Route path="" component={NotFoundPage} />
           <Route path="*"><NotFoundPage /> </Route>
           <Route path="/notfound" component={NotFoundPage} />
-          {/* <Redirect from='/?search' to='/notfound' /> */}
         </Switch>
         <Footer />
       </Router>

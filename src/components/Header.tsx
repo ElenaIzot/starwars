@@ -27,7 +27,9 @@ export function Header(): JSX.Element {
                 expand="lg"
                 className="header container-xxl">
                 <Navbar.Brand>
-                    <img className="logo" src={logo} alt={'logo'} />
+                    <Link to='/' className="menu__link">
+                        <img className="logo" src={logo} alt={'logo'} />
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" onClick={toggle} />
                 <Navbar.Collapse id="navbarScroll"

@@ -19,7 +19,6 @@ function App() {
           <Route exact path="/people" children={CharacterList} />
           <Route exact path='/favorite' component={FavoritePage} />
           <Route path="" component={NotFoundPage} />
-          <Route path="*"><NotFoundPage /> </Route>
           <Route path="/notfound" component={NotFoundPage} />
         </Switch>
         <Footer />

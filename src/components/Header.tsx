@@ -26,7 +26,7 @@ export function Header(): JSX.Element {
             <Navbar bg="dark" variant="dark"
                 expand="lg"
                 className="header container-xxl">
-                <Navbar.Brand href="/">
+                <Navbar.Brand>
                     <img className="logo" src={logo} alt={'logo'} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" onClick={toggle} />

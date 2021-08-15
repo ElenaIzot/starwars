@@ -8,22 +8,24 @@ export function Header(): JSX.Element {
     const query = useQuery();
     const [searchValue, setSearchValue] = useState(query.get('search') || '');
     const history = useHistory();
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const toggle = () => setIsOpen(!isOpen);
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        history.push(`/starwars/?search=${searchValue}`)
+        history.push(`/?search=${searchValue}`)
     };
 
     const handleChange = (e: any) => {
         setSearchValue(e.target.value)
-    }   
+    }
 
     return (
         <>
-            <Navbar bg="dark" variant="dark" expand="lg" className="header container-xxl">
+            <Navbar bg="dark" variant="dark"
+                expand="lg"
+                className="header container-xxl">
                 <Navbar.Brand href="#">
                     <img className="logo" src={logo} alt={'logo'} />
                 </Navbar.Brand>

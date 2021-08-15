@@ -2,14 +2,13 @@ import heartYellow from "../img/heartYellow.png";
 import heartGrey from "../img/heartGrey.png";
 import { useState } from "react";
 import { Character } from "./ap";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 export function CharacterItem(props: { character: Character }): JSX.Element {
-    const valueFromStorage = localStorage.getItem(
+    const valueFromStorage: string | null = localStorage.getItem(
         getFavoriteKey(props.character)
     );
 
-    let [isFavorite, setFavorites] = useState(
+    let [isFavorite, setFavorites] = useState<boolean>(
         !!valueFromStorage
     );
 
@@ -17,7 +16,7 @@ export function CharacterItem(props: { character: Character }): JSX.Element {
         return `favorite:${character.id}`;
     };
 
-    function addInFavorite() {
+    function addInFavorite(): void {
         setFavorites(true)
         localStorage.setItem(
             getFavoriteKey(props.character),
@@ -25,7 +24,7 @@ export function CharacterItem(props: { character: Character }): JSX.Element {
         );
     };
 
-    function removeFromFavorite() {
+    function removeFromFavorite(): void {
         setFavorites(false)
         localStorage.removeItem(
             getFavoriteKey(props.character)

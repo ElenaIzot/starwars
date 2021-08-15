@@ -12,10 +12,10 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router basename='/starwars'>
         <Header />
         <Switch>
-          <Route exact path='/starwars' component={MainPage} />
+          <Route exact path='/' component={MainPage} />
           <Route exact path="/people" children={CharacterList} />
           <Route exact path='/favorite' component={FavoritePage} />
           <Route path="" component={NotFoundPage} />

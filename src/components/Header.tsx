@@ -36,7 +36,7 @@ export function Header(): JSX.Element {
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Link to='/starwars' className="menu__link">
+                        <Link to='/' className="menu__link">
                             Home
                         </Link>
                         <Link to='/favorite' className="menu__link">

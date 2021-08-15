@@ -69,47 +69,6 @@ export function Header(): JSX.Element {
             </div>
         </div>
     </nav>
-
-
-
-
-        {/* <Navbar bg="dark" variant="dark"
-                expand="lg"
-                className="header container-xxl">
-                <Navbar.Brand>
-                    <Link to='/' className="menu__link">
-                        <img className="logo" src={logo} alt={'logo'} />
-                    </Link>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" onClick={toggle} />
-                <Navbar.Collapse id="navbarScroll"
-                    className={isOpen ? 'menu_dropdown' : 'menu'}>
-                    <Nav
-                        className="menu__item mr-auto my-2 my-lg-0"
-                        style={{ maxHeight: '100px' }}
-                        navbarScroll>
-                        <Link to='/' className="menu__link">
-                            Home
-                        </Link>
-                        <Link to='/favorite' className="menu__link">
-                            Favorite
-                        </Link>
-                    </Nav>
-                    <Form className="d-flex form" onSubmit={handleSubmit}>
-                        <input
-                            className="form__search mr-2 "
-                            type="text"
-                            placeholder='Search'
-                            value={searchValue}
-                            onChange={handleChange} />
-                        <input
-                            type="submit"
-                            className="form__btn btn btn-outline-warning "
-                            value='Search'
-                        />
-                    </Form>
-                </Navbar.Collapse>
-            </Navbar> */}
     </>
     )
 };

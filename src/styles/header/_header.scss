@@ -4,7 +4,7 @@
     color: $text-color;
     font-family: PT Serif, Georgia, serif;
     font-size: $font-size-medium;
-    padding: 0px $step*2;
+    padding: $step $step*2;
 }
 
 .menu {
@@ -28,29 +28,6 @@
         text-decoration: none;
     }
 }
-
-// .menu_dropdown {
-//     display: grid;
-//     justify-content: start;
-//     justify-items: start;
-//     margin-left: 76px;
-// }
-
-// .form {
-//     display: flex;
-//     justify-content: space-between;
-//     padding-right: $step * 12.5;
-//     margin-left: 32px;
-//     &__search {
-//         display: block;
-//         width: 198px;
-//         margin-right: $step;
-//         padding-left: $step;
-//     }
-//     &__btn {
-//         display: block;
-//     }
-// }
 
 .logo {
     width: 80px;

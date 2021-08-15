@@ -1,7 +1,7 @@
 .card-lists {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(202px, 1fr));
     grid-gap: $step * 3;
     align-self: baseline;
 }
@@ -12,7 +12,8 @@
     padding: $step;
     border-radius: 6px;
     &__body {
-        padding: $step * 2 $step * 2 0px $step * 2;
+        // padding: $step * 2 $step * 2 0px $step * 2;
+        padding: $step $step 0px $step;
         text-align: left;
     }
     &__photo {
@@ -34,7 +35,7 @@
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
-        font-size: $font-size-default;
+        font-size: 13px;
     }
 }
 
@@ -52,7 +53,6 @@
 
 .pagination {
     display: flex;
-    padding-left: 0;
     list-style: none;
     justify-content: center;
     margin: 32px auto;
@@ -61,7 +61,6 @@
 .button {
     width: 88px;
     height: 37px;
-    padding: $step;
     margin: 0 8px;
     &_currentPage {
         width: 42px;

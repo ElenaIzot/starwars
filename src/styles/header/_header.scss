@@ -1,20 +1,23 @@
 @import "../variables";
 
 .header {
-    display: flex;
     color: $text-color;
-    background-color: $bg-color;
     font-family: PT Serif, Georgia, serif;
     font-size: $font-size-medium;
+    padding: 0px $step*2;
 }
 
 .menu {
     display: flex;
     flex-basis: auto;
     justify-content: space-between;
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
     &__link {
         display: block;
-        margin: 0 $step * 4;
+        margin: 0px $step*4 0 0px;
         text-align: left;
         line-height: 2;
         color: $text-color;
@@ -26,31 +29,30 @@
     }
 }
 
-.menu_dropdown{
-    display: grid;
-    justify-content: start;
-    justify-items: start;
-    margin-left: 76px;
-}
+// .menu_dropdown {
+//     display: grid;
+//     justify-content: start;
+//     justify-items: start;
+//     margin-left: 76px;
+// }
 
-.form {
-    display: flex;
-    justify-content: space-between;
-    padding-right: $step * 12.5;
-    margin-left: 32px;
-    &__search {
-        display: block;
-        width: 198px;
-        margin-right: $step;
-        padding-left: $step;
-    }
-    &__btn {
-        display: block;
-    }
-}
+// .form {
+//     display: flex;
+//     justify-content: space-between;
+//     padding-right: $step * 12.5;
+//     margin-left: 32px;
+//     &__search {
+//         display: block;
+//         width: 198px;
+//         margin-right: $step;
+//         padding-left: $step;
+//     }
+//     &__btn {
+//         display: block;
+//     }
+// }
 
 .logo {
-    margin-left: $step * 13;
     width: 80px;
     height: 36px;
 }
